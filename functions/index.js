@@ -12,7 +12,7 @@ const logger = require("firebase-functions/logger");
 const pug = require('pug');
 
 exports.test = onRequest((request, response) => {
-    let template = pub.compileFile('views/test.pug');
+    let template = pug.compileFile('views/test.pug');
     let markup = template({
         name: request.query.name,
         major: request.query.major,
