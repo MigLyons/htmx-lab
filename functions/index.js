@@ -13,11 +13,28 @@ const pug = require('pug');
 
 exports.test = onRequest((request, response) => {
     let template = pug.compileFile('views/test.pug');
-    let markup = template({
-        name: request.query.name,
-        major: request.query.major,
-        quote: request.query.quote
-    });
+    let markup = template();
+    response.writeHead(200, {'Content-Type' : 'text/html'});
+    response.end(markup);
+});
+
+exports.home = onRequest((request, response) => {
+    let template = pug.compileFile('views/home.pug');
+    let markup = template();
+    response.writeHead(200, {'Content-Type' : 'text/html'});
+    response.end(markup);
+});
+
+exports.about = onRequest((request, response) => {
+    let template = pug.compileFile('views/about.pug');
+    let markup = template();
+    response.writeHead(200, {'Content-Type' : 'text/html'});
+    response.end(markup);
+});
+
+exports.contact = onRequest((request, response) => {
+    let template = pug.compileFile('views/contact.pug');
+    let markup = template();
     response.writeHead(200, {'Content-Type' : 'text/html'});
     response.end(markup);
 });

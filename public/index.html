@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html id="outer">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HTMX lab</title>
+    <title>HTMX lab Test</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/10.11.0/firebase-app-compat.js"></script>
@@ -26,7 +26,7 @@
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
+    <!-- <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
       #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
       #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
@@ -39,31 +39,18 @@
         body, #message { margin-top: 0; background: white; box-shadow: none; }
         body { border-top: 16px solid #ffa100; }
       }
-    </style>
+    </style> -->
   </head>
-  <body>
-    <div class="border-blue-600 border-2 w-96 mx-auto my-5 content-center">
-      <form hx-get="http://localhost:5000/awad-003/us-central1/test" hx-target="#userList" hx-swap="beforebegin">
-        <div>
-          <label>Name</label>
-          <input type="text" name="name" value="">
-        </div>
-        <div>
-          <label>Major</label>
-          <input type="text" name="major" value="">
-        </div>
-        <div>
-          <label>Quote</label>
-          <input type="text" name="quote" value="">
-        </div>
-        <button>Submit</button>
-
-      </form>
+  <body hx-get="http://localhost:5000/awad-003/us-central1/home" hx-target="#main" hx-trigger="load">
+    <div class="bg-white w-2/5 float-end">
+      <div class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+        <a hx-get="http://localhost:5000/awad-003/us-central1/home" hx-target="#main" class="text-sm font-semibold leading-6 text-gray-900"> Home </a>
+        <a hx-get="http://localhost:5000/awad-003/us-central1/about" hx-target="#main"class="text-sm font-semibold leading-6 text-gray-900"> About </a>
+        <a hx-get="http://localhost:5000/awad-003/us-central1/contact" hx-target="#main"class="text-sm font-semibold leading-6 text-gray-900"> Contact </a>
+      </div>
     </div>
-    
-    <div class="users">
-      <br id="userList" />
-    </div>
+    <div class="pt-20" id="main">
 
+    </div>
   </body>
 </html>
